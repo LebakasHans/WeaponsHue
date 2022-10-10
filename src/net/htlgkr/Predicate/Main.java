@@ -1,6 +1,7 @@
 package net.htlgkr.Predicate;
 
 import java.util.function.Predicate;
+import java.util.stream.IntStream;
 
 public class Main {
 
