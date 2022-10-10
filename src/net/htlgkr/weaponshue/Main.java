@@ -81,10 +81,11 @@ public class Main {
                 System.out.println();
             });
         };
-        printAsTable.print(weaponList);
 
         Collections.sort(weaponList, alphabeticComparator);
-        printable.print(weaponList);
+        printAsTable.print(weaponList);
+        
+        //printable.print(weaponList);
     }
 
     public static Comparator<Weapon> getAlphabeticComparator() {
