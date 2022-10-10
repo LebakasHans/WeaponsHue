@@ -14,6 +14,7 @@ public class CsvIO {
         String line;
         try {
             Scanner sc = new Scanner((new File(FILE)));
+            line = sc.nextLine();
             while (sc.hasNext()){
                 line = sc.nextLine();
                 weaponList.add(Weapon.makeCsvToWeapon(line));
@@ -21,6 +22,6 @@ public class CsvIO {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        return null;
+        return weaponList;
     }
 }

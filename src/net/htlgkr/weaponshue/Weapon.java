@@ -1,5 +1,7 @@
 package net.htlgkr.weaponshue;
 
+import java.util.ArrayList;
+
 public class Weapon {
     private String name;
     private CombatType combatType;
@@ -31,5 +33,46 @@ public class Weapon {
                 Integer.valueOf(line[6])
         );
         return weapon;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public CombatType getCombatType() {
+        return combatType;
+    }
+
+    public DamageType getDamageType() {
+        return damageType;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return "Weapon{" +
+                "name='" + name + '\'' +
+                ", combatType=" + combatType +
+                ", damageType=" + damageType +
+                ", damage=" + damage +
+                ", speed=" + speed +
+                ", strength=" + strength +
+                ", value=" + value +
+                '}';
     }
 }
