@@ -1,4 +1,6 @@
-package net.htlgkr.weaponshue;
+package net.htlgkr.student;
+
+import net.htlgkr.weaponshue.Weapon;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,8 +13,8 @@ import java.util.stream.Stream;
 public class CsvIO {
     private final String FILE = "weapons.csv";
 
-    public List<Weapon> readCsv(){
-        List<Weapon> weaponList= new ArrayList<>();
+    public List<net.htlgkr.weaponshue.Weapon> readCsv(){
+        List<net.htlgkr.weaponshue.Weapon> weaponList= new ArrayList<>();
         try(Stream<String> stream = Files.lines(Paths.get(FILE))) {
 
             //I don´t know how else to remove the first line without changing csv itself

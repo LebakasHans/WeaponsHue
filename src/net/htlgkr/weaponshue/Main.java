@@ -1,10 +1,8 @@
 package net.htlgkr.weaponshue;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 public class Main {
@@ -23,30 +21,30 @@ public class Main {
         Printable printAsTable = weapons -> {
             int[] maxLenghts = new int[7];
             ArrayList<String> weaponAsStrings = new ArrayList<>();
-            ArrayList<ArrayList<String>> weaponAsStringList = new ArrayList<>(1);
-            int counter = 0;
-            for (Weapon weapon : weapons) {
-                if (weapon.getName().length() > maxLenghts[0]) {
-                    maxLenghts[0] = weapon.getName().length();
-                }
-                if (weapon.getCombatType().toString().length() > maxLenghts[1]) {
-                    maxLenghts[1] = weapon.getCombatType().toString().length();
-                }
-                if (weapon.getDamageType().toString().length() > maxLenghts[2]) {
-                    maxLenghts[2] = weapon.getDamageType().toString().length();
-                }
-                if (Integer.toString(weapon.getDamage()).length() > maxLenghts[3]) {
-                    maxLenghts[3] = Integer.toString(weapon.getDamage()).length();
-                }
-                if (Integer.toString(weapon.getSpeed()).length() > maxLenghts[4]) {
-                    maxLenghts[4] = Integer.toString(weapon.getSpeed()).length();
-                }
-                if (Integer.toString(weapon.getStrength()).length() > maxLenghts[5]) {
-                    maxLenghts[5] = Integer.toString(weapon.getStrength()).length();
-                }
-                if (Integer.toString(weapon.getValue()).length() > maxLenghts[6]) {
-                    maxLenghts[6] = Integer.toString(weapon.getValue()).length();
-                }
+            ArrayList<ArrayList<String>> weaponAsStringList = new ArrayList<>();
+                int counter = 0;
+                for (Weapon weapon : weapons) {
+                    if (weapon.getName().length() > maxLenghts[0]) {
+                        maxLenghts[0] = weapon.getName().length();
+                    }
+                    if (weapon.getCombatType().toString().length() > maxLenghts[1]) {
+                        maxLenghts[1] = weapon.getCombatType().toString().length();
+                    }
+                    if (weapon.getDamageType().toString().length() > maxLenghts[2]) {
+                        maxLenghts[2] = weapon.getDamageType().toString().length();
+                    }
+                    if (Integer.toString(weapon.getDamage()).length() > maxLenghts[3]) {
+                        maxLenghts[3] = Integer.toString(weapon.getDamage()).length();
+                    }
+                    if (Integer.toString(weapon.getSpeed()).length() > maxLenghts[4]) {
+                        maxLenghts[4] = Integer.toString(weapon.getSpeed()).length();
+                    }
+                    if (Integer.toString(weapon.getStrength()).length() > maxLenghts[5]) {
+                        maxLenghts[5] = Integer.toString(weapon.getStrength()).length();
+                    }
+                    if (Integer.toString(weapon.getValue()).length() > maxLenghts[6]) {
+                        maxLenghts[6] = Integer.toString(weapon.getValue()).length();
+                    }
 
                 weaponAsStrings.add(weapon.getName());
                 weaponAsStrings.add(weapon.getCombatType().toString());
@@ -81,10 +79,9 @@ public class Main {
                 System.out.println();
             });
         };
-
         Collections.sort(weaponList, alphabeticComparator);
         printAsTable.print(weaponList);
-        
+
         //printable.print(weaponList);
     }
 
