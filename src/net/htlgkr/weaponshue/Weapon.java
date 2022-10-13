@@ -1,6 +1,6 @@
 package net.htlgkr.weaponshue;
 
-import java.util.ArrayList;
+import java.util.Objects;
 
 public class Weapon {
     private String name;
@@ -8,16 +8,16 @@ public class Weapon {
     private DamageType damageType;
     private int damage;
     private int speed;
-    private  int strength;
+    private  int minStrength;
     private int value;
 
-    public Weapon(String name, CombatType combatType, DamageType damageType, int damage, int speed, int strength, int value) {
+    public Weapon(String name, CombatType combatType, DamageType damageType, int damage, int speed, int minStrength, int value) {
         this.name = name;
         this.combatType = combatType;
         this.damageType = damageType;
         this.damage = damage;
         this.speed = speed;
-        this.strength = strength;
+        this.minStrength = minStrength;
         this.value = value;
     }
 
@@ -55,12 +55,44 @@ public class Weapon {
         return speed;
     }
 
-    public int getStrength() {
-        return strength;
+    public int getMinStrength() {
+        return minStrength;
     }
 
     public int getValue() {
         return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Weapon weapon = (Weapon) o;
+
+        if (damage != weapon.damage) return false;
+        if (speed != weapon.speed) return false;
+        if (minStrength != weapon.minStrength) return false;
+        if (value != weapon.value) return false;
+        if (!Objects.equals(name, weapon.name)) return false;
+        if (combatType != weapon.combatType) return false;
+        return damageType == weapon.damageType;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (combatType != null ? combatType.hashCode() : 0);
+        result = 31 * result + (damageType != null ? damageType.hashCode() : 0);
+        result = 31 * result + damage;
+        result = 31 * result + speed;
+        result = 31 * result + minStrength;
+        result = 31 * result + value;
+        return result;
     }
 
     @Override
@@ -71,7 +103,7 @@ public class Weapon {
                 ", damageType=" + damageType +
                 ", damage=" + damage +
                 ", speed=" + speed +
-                ", strength=" + strength +
+                ", strength=" + minStrength +
                 ", value=" + value +
                 '}';
     }

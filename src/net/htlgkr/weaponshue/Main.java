@@ -39,8 +39,8 @@ public class Main {
                     if (Integer.toString(weapon.getSpeed()).length() > maxLenghts[4]) {
                         maxLenghts[4] = Integer.toString(weapon.getSpeed()).length();
                     }
-                    if (Integer.toString(weapon.getStrength()).length() > maxLenghts[5]) {
-                        maxLenghts[5] = Integer.toString(weapon.getStrength()).length();
+                    if (Integer.toString(weapon.getMinStrength()).length() > maxLenghts[5]) {
+                        maxLenghts[5] = Integer.toString(weapon.getMinStrength()).length();
                     }
                     if (Integer.toString(weapon.getValue()).length() > maxLenghts[6]) {
                         maxLenghts[6] = Integer.toString(weapon.getValue()).length();
@@ -51,7 +51,7 @@ public class Main {
                 weaponAsStrings.add(weapon.getDamageType().toString());
                 weaponAsStrings.add(Integer.toString(weapon.getDamage()));
                 weaponAsStrings.add(Integer.toString(weapon.getSpeed()));
-                weaponAsStrings.add(Integer.toString(weapon.getStrength()));
+                weaponAsStrings.add(Integer.toString(weapon.getMinStrength()));
                 weaponAsStrings.add(Integer.toString(weapon.getValue()));
 
                 ArrayList<String> arrayListToAdd = new ArrayList<>();
